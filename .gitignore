@@ -1,0 +1,8 @@
+# Log Files
+**/*.log
+
+# Karabiner Auto Backups
+.config/karabiner/automatic_backups
+
+# Lazygit State File
+.config/lazygit/state.yml

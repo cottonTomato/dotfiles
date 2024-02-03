@@ -1,0 +1,36 @@
+[[language]]
+name = "python"
+shebangs = ["python"]
+language-servers = [ "pyright", "ruff" ]
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+
+[language-server.ruff]
+command = "ruff-lsp"
+
+[language-server.ruff.config.settings]
+args = ["--ignore", "E501"]
+
+[language.formatter]
+command = "black"
+args = ["--line-length", "88", "--quiet", "-"]
+
+[language-server.yaml-language-server.config.yaml]
+format = { enable = true }
+validation = true
+
+[language-server.vscode-json-language-server]
+config = { "provideFormatter" = true, "json" = { "keepLines" = { "enable" = true } } }
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+
+[[language]]
+name = "bash"
+shebangs = ["sh", "bash"]
+
+[[language]]
+name = "git-config"
+file-types = [".gitmodules", ".gitconfig", { suffix = ".git/config" }, { suffix = ".config/git/config" }, { suffix = ".config/git/config-public" }]
