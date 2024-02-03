@@ -1,14 +1,5 @@
 #!/bin/sh
 
-function ya() {
-  local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
-  yazi "$@" --cwd-file="$tmp"
-  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-    cd -- "$cwd"
-  fi
-  rm -f -- "$tmp"
-}
-
 function lg() {
   export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
 
@@ -35,18 +26,3 @@ function idezel() {
     zellij --session $sname --layout ide
   fi
 }
-
-function br() {
-    local cmd cmd_file code
-    cmd_file=$(mktemp)
-    if broot --outcmd "$cmd_file" "$@"; then
-        cmd=$(<"$cmd_file")
-        command rm -f "$cmd_file"
-        eval "$cmd"
-    else
-        code=$?
-        command rm -f "$cmd_file"
-        return "$code"
-    fi
-}
-
