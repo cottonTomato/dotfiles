@@ -1,0 +1,7 @@
+# Common Ignores
+\.git
+\.gitignore
+\.DS_Store
+
+# Ignore Readme files
+^/README.*

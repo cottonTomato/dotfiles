@@ -10,6 +10,7 @@ HISTFILE="$HOME/.local/history/.zsh_history"
 
 export NODE_REPL_HISTORY=""
 export PYTHONSTARTUP="$HOME/.config/python/pythonrc"
+export LESSHISTFILE=-
 
 # Common ENV Config End
 
