@@ -1,16 +1,5 @@
 #!/bin/sh
 
-function lg() {
-  export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
-
-  lazygit "$@"
-
-  if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
-    cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
-    rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
-  fi
-}
-
 function idezel() {
   if [[ ! -z $ZELLIJ_SESSION_NAME ]]; then
     echo "Cannot run within Zellij session. Detach from Current Session First."
