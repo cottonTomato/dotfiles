@@ -9,3 +9,7 @@
 
 # Lazygit State File
 .config/lazygit/state.yml
+
+# Zed Non - Settings Files
+.config/zed/conversations
+.config/zed/embeddings
