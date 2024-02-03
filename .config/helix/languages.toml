@@ -1,3 +1,4 @@
+# Python Config
 [[language]]
 name = "python"
 shebangs = ["python"]
@@ -16,21 +17,26 @@ args = ["--ignore", "E501"]
 command = "black"
 args = ["--line-length", "88", "--quiet", "-"]
 
+# YAML Config
 [language-server.yaml-language-server.config.yaml]
 format = { enable = true }
 validation = true
 
+# JSON Config
 [language-server.vscode-json-language-server]
 config = { "provideFormatter" = true, "json" = { "keepLines" = { "enable" = true } } }
 
+# TOML Config
 [[language]]
 name = "toml"
 formatter = { command = "taplo", args = ["fmt", "-"] }
 
+# Bash Config
 [[language]]
 name = "bash"
 shebangs = ["sh", "bash"]
 
+# Gitconfig Config
 [[language]]
 name = "git-config"
 file-types = [".gitmodules", ".gitconfig", { suffix = ".git/config" }, { suffix = ".config/git/config" }, { suffix = ".config/git/config-public" }]

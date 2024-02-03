@@ -1,1 +1,35 @@
-theme = "gruvbox_dark_soft"
+theme = "base16_transparent"
+
+[editor]
+mouse = false
+middle-click-paste = false
+cursorline = true
+bufferline = "multiple"
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+left = ["mode", "separator","spacer", "version-control","spacer", "diagnostics", "separator", "spinner"]
+center = ["file-name", "file-modification-indicator"]
+right = ["position", "file-encoding", "file-line-ending", "file-type", "separator", "selections", "register"]
+
+[editor.cursor-shape]
+normal = "underline"
+insert = "bar"
+select = "block"
+
+[editor.file-picker]
+hidden = false
+
+[editor.whitespace]
+render = "all"
+
+[editor.indent-guides]
+render = true
+
+[editor.soft-wrap]
+enable = true
+
+[keys.normal."+"]
+r = ":config-reload"
