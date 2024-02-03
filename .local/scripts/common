@@ -1,0 +1,67 @@
+#!/bin/sh
+
+alias cls="clear"
+
+function ep() {
+    echo ${PATH} | sed -e $'s/:/\\\n/g'
+}
+
+alias ls="eza --icons --group-directories-first"
+alias la="eza --icons --group-directories-first -a"
+alias ll="eza --icons --group-directories-first --git -l"
+alias lla="eza --icons --group-directories-first --git -la"
+
+alias loadtime="for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done"
+
+alias sp="ps aux | rg -v rg | rg"
+
+function ya() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
+function lg() {
+  export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+  lazygit "$@"
+
+  if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+    cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+    rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+  fi
+}
+
+function idezel() {
+  if [[ ! -z $ZELLIJ_SESSION_NAME ]]; then
+    echo "Cannot run within Zellij session. Detach from Current Session First."
+    return 1
+  fi
+
+  sname="${PWD##*/}"
+  session_list="$(zellij list-sessions --short)"
+
+  if echo $session_list | grep -q $sname; then
+    zellij attach $sname
+  else
+    zellij --session $sname --layout ide
+  fi
+}
+
+function br() {
+    local cmd cmd_file code
+    cmd_file=$(mktemp)
+    if broot --outcmd "$cmd_file" "$@"; then
+        cmd=$(<"$cmd_file")
+        command rm -f "$cmd_file"
+        eval "$cmd"
+    else
+        code=$?
+        command rm -f "$cmd_file"
+        return "$code"
+    fi
+}
+

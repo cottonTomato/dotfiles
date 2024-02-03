@@ -34,8 +34,6 @@ if [ -d "$SCRIPT_PATH" ]; then
   done
 fi
 
-source ~/.fzf.zsh # fzf init
-
 # Load zsh Plugins
 source "${PLUGIN_PATH}/fzf-tab/fzf-tab.plugin.zsh" # zsh-tab init
 source "${PLUGIN_PATH}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" # zsh-syntax-highlighting init
