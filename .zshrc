@@ -11,6 +11,7 @@ HISTFILE="$HOME/.local/history/.zsh_history"
 export NODE_REPL_HISTORY=""
 export PYTHONSTARTUP="$HOME/.config/python/pythonrc"
 export LESSHISTFILE=-
+export MANPAGER="sh -c 'col -b | bat -l man -p'"
 
 # Common ENV Config End
 
@@ -20,6 +21,7 @@ export PATH="$PNPM_HOME:$PATH" # Source Pnpm
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="/opt/homebrew/opt/fzf/bin:$PATH"
+export PATH="/opt/homebrew/opt/ccache/libexec:$PATH"
 export PATH="${HOME}/.local/bin:$PATH"
 
 export FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
