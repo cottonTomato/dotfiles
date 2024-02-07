@@ -22,19 +22,19 @@ args = ["--line-length", "88", "--quiet", "-"]
 format = { enable = true }
 validation = true
 
-# JSON Config
-[language-server.vscode-json-language-server]
-config = { "provideFormatter" = true, "json" = { "keepLines" = { "enable" = true } } }
-
 # TOML Config
 [[language]]
 name = "toml"
 formatter = { command = "taplo", args = ["fmt", "-"] }
+auto-format = true
 
 # Bash Config
 [[language]]
 name = "bash"
-shebangs = ["sh", "bash"]
+shebangs = ["sh", "bash", "zsh"]
+indent = { tab-width = 4, unit = '    ' }
+formatter = { command = "shfmt", args = ["-i", "4"] }
+auto-format = true
 
 # Gitconfig Config
 [[language]]
