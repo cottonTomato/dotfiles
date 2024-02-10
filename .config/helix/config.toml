@@ -5,14 +5,32 @@ mouse = false
 middle-click-paste = false
 cursorline = true
 bufferline = "multiple"
+undercurl = true
 
 [editor.statusline]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
-left = ["mode", "separator","spacer", "version-control","spacer", "diagnostics", "separator", "spinner"]
+left = [
+  "mode",
+  "separator",
+  "spacer",
+  "version-control",
+  "spacer",
+  "diagnostics",
+  "separator",
+  "spinner",
+]
 center = ["file-name", "file-modification-indicator"]
-right = ["position", "file-encoding", "file-line-ending", "file-type", "separator", "selections", "register"]
+right = [
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+  "separator",
+  "selections",
+  "register",
+]
 
 [editor.cursor-shape]
 normal = "underline"
