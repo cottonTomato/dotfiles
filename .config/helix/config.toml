@@ -37,6 +37,13 @@ normal = "underline"
 insert = "bar"
 select = "block"
 
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+"'" = "'"
+
 [editor.file-picker]
 hidden = false
 
@@ -49,7 +56,34 @@ render = true
 [editor.soft-wrap]
 enable = true
 
+# My Custom Keymaps
+
 [keys.normal]
+c = "change_selection_noyank"
+D = "delete_selection_noyank"
+esc = ["collapse_selection", "keep_primary_selection"]
+";" = "select_register"
+"\"" = "no_op"
+"," = "no_op"
+"A-H" = "earlier"
+"A-S" = "split_selection_on_newline"
+"A-X" = "shrink_to_line_bounds"
+"`" = "switch_to_uppercase"
+"A-`" = "switch_to_lowercase"
+"A-b" = "page_up"
+"A-f" = "page_down"
+"A-u" = "half_page_up"
+"A-d" = "half_page_down"
+"A-i" = "jump_forward"
+"A-o" = "jump_backward"
+"A-s" = "save_selection"
+"C-b" = "no_op"
+"C-f" = "no_op"
+"C-u" = "no_op"
+"C-d" = "no_op"
+"C-i" = "no_op"
+"C-o" = "no_op"
+"C-s" = "no_op"
 "A-h" = "jump_view_left"
 "A-l" = "jump_view_right"
 "A-j" = "jump_view_down"
@@ -58,7 +92,22 @@ enable = true
 "A-x" = "decrement"
 "C-c" = "no_op"
 "A-c" = "toggle_comments"
-c = "change_selection_noyank"
+"C-w" = "no_op"
+"A-p" = "no_op"
+"A-n" = "no_op"
+
+[keys.normal.z]
+"A-b" = "page_up"
+"A-f" = "page_down"
+"A-u" = "half_page_up"
+"A-d" = "half_page_down"
+"C-b" = "no_op"
+"C-f" = "no_op"
+"C-u" = "no_op"
+"C-d" = "no_op"
+
+[keys.normal.space]
+w = "no_op"
 
 [keys.normal."A-w"]
 w = "rotate_view"
@@ -73,3 +122,32 @@ L = "swap_view_right"
 
 [keys.normal."+"]
 r = ":config-reload"
+
+[keys.insert]
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"
+"C-w" = "no_op"
+"A-d" = "no_op"
+"A-del" = "no_op"
+"S-backspace" = "no_op"
+"C-d" = "no_op"
+"C-u" = "no_op"
+"C-k" = "no_op"
+"C-r" = "no_op"
+"C-s" = "no_op"
+"C-x" = "no_op"
+"A-backspace" = "delete_char_forward"
+"C-j" = "insert_newline"
+"A-b" = "delete_word_backward"
+"A-e" = "delete_word_forward"
+"C-h" = "kill_to_line_start"
+"C-l" = "kill_to_line_end"
+"A-r" = "insert_register"
+"A-s" = "commit_undo_checkpoint"
+"A-x" = "completion"
