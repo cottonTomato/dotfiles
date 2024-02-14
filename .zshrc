@@ -1,5 +1,6 @@
 # Zsh Settings
 
+zmodload zsh/zprof
 unsetopt BEEP
 
 HISTFILE="$HOME/.local/history/.zsh_history"
@@ -44,7 +45,10 @@ eval "$(starship init zsh)" # starship init
 
 # Reload completion engine
 autoload -Uz compinit
-compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
 
 eval "$(zoxide init --cmd cd zsh)"     # zoxide init
 eval "$(_PIO_COMPLETE=zsh_source pio)" # PlatformIO Core completion support

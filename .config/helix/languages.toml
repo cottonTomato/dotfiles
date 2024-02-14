@@ -2,7 +2,7 @@
 [[language]]
 name = "python"
 shebangs = ["python"]
-language-servers = [ "pyright", "ruff" ]
+language-servers = ["pyright", "ruff"]
 
 [language-server.pyright.config.python.analysis]
 typeCheckingMode = "basic"
@@ -16,6 +16,12 @@ args = ["--ignore", "E501"]
 [language.formatter]
 command = "black"
 args = ["--line-length", "88", "--quiet", "-"]
+
+# Go Config
+[[language]]
+name = "go"
+auto-format = true
+formatter = { command = "goimports" }
 
 # YAML Config
 [language-server.yaml-language-server.config.yaml]
@@ -39,4 +45,10 @@ auto-format = true
 # Gitconfig Config
 [[language]]
 name = "git-config"
-file-types = [".gitmodules", ".gitconfig", { suffix = ".git/config" }, { suffix = ".config/git/config" }, { suffix = ".config/git/config-public" }]
+file-types = [
+  ".gitmodules",
+  ".gitconfig",
+  { suffix = ".git/config" },
+  { suffix = ".config/git/config" },
+  { suffix = ".config/git/config-public" },
+]

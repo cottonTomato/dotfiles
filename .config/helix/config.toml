@@ -49,5 +49,27 @@ render = true
 [editor.soft-wrap]
 enable = true
 
+[keys.normal]
+"A-h" = "jump_view_left"
+"A-l" = "jump_view_right"
+"A-j" = "jump_view_down"
+"A-k" = "jump_view_up"
+"A-a" = "increment"
+"A-x" = "decrement"
+"C-c" = "no_op"
+"A-c" = "toggle_comments"
+c = "change_selection_noyank"
+
+[keys.normal."A-w"]
+w = "rotate_view"
+v = "vsplit"
+h = "hsplit"
+q = "wclose"
+o = "wonly"
+H = "swap_view_left"
+J = "swap_view_down"
+K = "swap_view_up"
+L = "swap_view_right"
+
 [keys.normal."+"]
 r = ":config-reload"
