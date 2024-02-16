@@ -195,6 +195,4 @@ theme "gruvbox"
 
 default_layout "compact"
 
-default_mode "locked"
-
-mouse_mode false
+mouse_mode true
