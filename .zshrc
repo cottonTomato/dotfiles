@@ -1,33 +1,42 @@
 # Zsh Settings
 
-zmodload zsh/zprof
+# zmodload zsh/zprof
 unsetopt BEEP
-
-HISTFILE="$HOME/.local/history/.zsh_history"
 
 # Zsh ends
 
 # Common ENV var Config
 
-export NODE_REPL_HISTORY=""
 export PYTHONSTARTUP="$HOME/.config/python/pythonrc"
-export LESSHISTFILE=-
+
+HIST_DIR="$HOME/.local/history"
+export NODE_REPL_HISTORY="$HIST_DIR/.node_history"
+export LESSHISTFILE="$HIST_DIR/.less_history"
+HISTFILE="$HIST_DIR/.zsh_history" # Zsh History File
+
 export MANPAGER="sh -c 'col -b | bat -l man -p'"
 
 # Common ENV Config End
 
-export PATH="$GOPATH/bin:$PATH"      # Source Go
-export PATH="$HOME/.cargo/bin:$PATH" # Source Rust
-export PATH="$PNPM_HOME:$PATH"       # Source Pnpm
+GOBINPATH="$GOPATH/bin"                          # Source Go
+CARGOBINPATH="$HOME/.cargo/bin"                  # Source Rust
+PNPMPATH="$PNPM_HOME"                            # Source Pnpm
+LLVMBINPATH="$(brew --prefix)/opt/llvm/bin"      # Source llvm
+FZFBINPATH="$(brew --prefix)/opt/fzf/bin"        # Source fzf
+LOCALBINPATH="$HOME/.local/bin"                  # Source local bins
 
-export PATH="$(brew --prefix)/opt/llvm/bin:$PATH"
-export PATH="$(brew --prefix)/opt/fzf/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
+TOOLPATHS=($GOBINPATH $CARGOBINPATH $LLVMBINPATH $FZFBINPATH $LOCALBINPATH $PNPMPATH)
+
+for toolpath in ${TOOLPATHS[@]}; do
+    if [[ $PATH != *"$toolpath"* ]];then
+        export PATH=$toolpath:$PATH
+    fi
+done
 
 export FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
 export FPATH="$HOME/.local/comp:$FPATH"
 
-eval "$(mise activate zsh)"
+eval "$(mise activate zsh)" # mise init
 
 # Load zsh scripts
 if [ -d "$SCRIPT_PATH" ]; then

@@ -15,7 +15,11 @@ alias loadtime="for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done"
 
 alias sp="ps aux | rg -v rg | rg"
 
+alias gts="git status"
+
 alias clock="tty-clock -scB"
 
 alias cc="clang"
 alias c++="clang++"
+
+alias getidf='. $HOME/esp/esp-idf/export.sh'
