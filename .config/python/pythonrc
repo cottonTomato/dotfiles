@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
 
-import readline
-readline.write_history_file = lambda *args: None
+import readline, os
+hist_file = os.environ["HIST_DIR"] + "/python_history"
+readline.write_history_file(hist_file)

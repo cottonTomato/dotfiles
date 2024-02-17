@@ -6,6 +6,7 @@ middle-click-paste = false
 cursorline = true
 bufferline = "multiple"
 undercurl = true
+line-number = "relative"
 
 [editor.statusline]
 mode.normal = "NORMAL"

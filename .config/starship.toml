@@ -1,1 +1,14 @@
 command_timeout = 10000
+
+[python]
+symbol = "\ue606 "
+
+[c]
+symbol = "\ue61e "
+commands = [['clang', '--version'], ['gcc', '--version']]
+
+[golang]
+symbol = "\ue626 "
+
+[cmake]
+symbol = "\ue731 "

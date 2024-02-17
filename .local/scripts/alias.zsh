@@ -19,7 +19,4 @@ alias gts="git status"
 
 alias clock="tty-clock -scB"
 
-alias cc="clang"
-alias c++="clang++"
-
 alias getidf='. $HOME/esp/esp-idf/export.sh'
