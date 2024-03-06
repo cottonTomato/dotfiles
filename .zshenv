@@ -9,5 +9,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 export EDITOR="hx" 
 
-export CC="/opt/homebrew/opt/llvm/bin/clang"
-export CXX="/opt/homebrew/opt/llvm/bin/clang++"
+SCCACHE="$HOME/.cargo/bin/sccache"
+CLANG="/opt/homebrew/opt/llvm/bin/clang"
+CLANGXX="/opt/homebrew/opt/llvm/bin/clang++"
+export CC="$SCCACHE $CLANG"
+export CXX="$SCCACHE $CLANGXX"

@@ -9,6 +9,3 @@ commands = [['clang', '--version'], ['gcc', '--version']]
 
 [golang]
 symbol = "\ue626 "
-
-[cmake]
-symbol = "\ue731 "

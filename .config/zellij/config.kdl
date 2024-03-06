@@ -191,7 +191,7 @@ plugins {
     session-manager { path "session-manager"; }
 }
 
-theme "gruvbox"
+theme "solarized_dark"
 
 default_layout "compact"
 
