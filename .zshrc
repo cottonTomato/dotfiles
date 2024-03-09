@@ -34,3 +34,4 @@ done
 compinit -C
 
 eval "$(zoxide init --cmd cd zsh)"     # zoxide init
+
