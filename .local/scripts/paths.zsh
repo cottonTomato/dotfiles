@@ -6,7 +6,7 @@ LLVMBINPATH="$(brew --prefix llvm)/bin"          # Source llvm
 FZFBINPATH="$(brew --prefix fzf)/bin"            # Source fzf
 LOCALBINPATH="$HOME/.local/bin"                  # Source local bins
 
-TOOLPATHS=($GOBINPATH $CARGOBINPATH $BINUTILBINSPATH $LLVMBINPATH $FZFBINPATH $LOCALBINPATH $PNPMPATH)
+TOOLPATHS=($GOBINPATH $CARGOBINPATH $LLVMBINPATH $FZFBINPATH $LOCALBINPATH $PNPMPATH)
 
 for toolpath in ${TOOLPATHS[@]}; do
     if [[ $PATH != *"$toolpath"* ]];then

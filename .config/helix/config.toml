@@ -124,6 +124,7 @@ L = "swap_view_right"
 
 [keys.normal."+"]
 r = ":config-reload"
+f = ":format"
 
 [keys.insert]
 up = "no_op"

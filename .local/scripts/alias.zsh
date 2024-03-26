@@ -23,10 +23,10 @@ function mkcd() {
     mkdir -p $1 && cd $_
 }
 
-alias gts="git status"
-
 alias clock="tty-clock -scB"
 
 alias getidf='. $HOME/esp/esp-idf/export.sh'
+alias getdbt='. $HOME/.local/venv/dbt-env/bin/activate'
+alias getlocust='. $HOME/.local/venv/locust-env/bin/activate'
 
 alias nv="neovide"

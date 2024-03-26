@@ -20,7 +20,7 @@ args = ["--line-length", "88", "--quiet", "-"]
 # Go Config
 [[language]]
 name = "go"
-auto-format = true
+auto-format = false
 formatter = { command = "goimports" }
 
 # YAML Config

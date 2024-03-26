@@ -2,6 +2,9 @@
 # [include]
 #     path = ~/.config/git/conifg-public
 
+[gpg]
+	format = ssh
+
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f

@@ -4,7 +4,7 @@ unsetopt BEEP
 
 # Env Var Config
 export PYTHONSTARTUP="$HOME/.config/python/pythonrc"
-export MANPAGER="sh -c 'col -b | bat -l man -p'"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 export HIST_DIR="$HOME/.local/history"
 export NODE_REPL_HISTORY="$HIST_DIR/node_history" # Node REPL Hisory
@@ -25,6 +25,8 @@ eval "$(starship init zsh)" # starship init
 source "$PLUGIN_PATH/fzf-tab/fzf-tab.plugin.zsh"                          # zsh-tab init
 source "$PLUGIN_PATH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" # zsh-syntax-highlighting init
 source "$PLUGIN_PATH/zsh-completions/zsh-completions.plugin.zsh"          # zsh-completions init
+
+export PIPX_DEFAULT_PYTHON="$(mise where python)/bin/python" # Defalult interpreter for pipx
 
 # Reload completion engine
 autoload -Uz compinit
